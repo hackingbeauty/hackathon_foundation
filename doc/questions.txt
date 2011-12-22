@@ -1,0 +1,128 @@
+1) is the email regex good enough?  can't you have numbers in an email
+addy?
+
+2) i found that self.encrypted_password = encrypt(self.password) more
+explicit and clear than self.encrypted_password = encrypt(password)
+
+3) remember what "secure one-way hashing" is
+
+4) why use User.new instead of User.create! in specs?
+
+5) so i understand if someone gets a hold of the encrypted_password
+hash, they can conduct a rainbow attack.  The way to circumvent this is
+to create a salt which is a hash of the password and a UTC timestamp.
+The salt is then hashed with the submitted hashed password which yields
+the encrypted_password hash.  However, the salt must be stored in the
+database.  If someone gets a hold of the salt hash, they can hash that
+with the password they're guessing (rainbow attacked), and compare that
+with the encrypted_password hash (provided they got access to that
+too).5) so i understand if someone gets a hold of the encrypted_password
+hash, they can conduct a rainbow attack.  The way to circumvent this is
+to create a salt which is a hash of the password and a UTC timestamp.
+The salt is then hashed with the submitted hashed password which yields
+the encrypted_password hash.  However, the salt must be stored in the
+database.  If someone gets a hold of the salt hash, they can hash that
+with the password they're guessing (rainbow attacked), and compare that
+with the encrypted_password hash (provided they got access to that
+too).
+
+5) so i understand if someone gets a hold of the encrypted_password
+hash, they can conduct a rainbow attack.  The way to circumvent this is
+to create a salt which is a hash of the password and a UTC timestamp.
+The salt is then hashed with the submitted hashed password which yields
+the encrypted_password hash.  However, the salt must be stored in the
+database.  If someone gets a hold of the salt hash, they can hash that
+with the password they're guessing (rainbow attacked), and compare that
+with the encrypted_password hash (provided they got access to that
+too).5) so i understand if someone gets a hold of the encrypted_password
+hash, they can conduct a rainbow attack.  The way to circumvent this is
+to create a salt which is a hash of the password and a UTC timestamp.
+The salt is then hashed with the submitted hashed password which yields
+the encrypted_password hash.  However, the salt must be stored in the
+database.  If someone gets a hold of the salt hash, they can hash that
+with the password they're guessing (rainbow attacked), and compare that
+with the encrypted_password hash (provided they got access to that
+too).
+
+6) confused in tests when use get :show vs get 'show' - is there a big
+difference?
+
+7) why use  post :create, :user => @attr
+vs get :show, :id => @user ?
+
+8) fluently manipulaing data structures in ruby may be a weakness...hash
+of hashes...how do u create that?  an array of arrays...how do you
+create that?  how do you convert a hash to a json object? how do you
+convert an incoming json object to a hash? etc.
+
+8) fluently manipulaing data structures in ruby may be a weakness...hash
+of hashes...how do u create that?  an array of arrays...how do you
+create that?  how do you convert a hash to a json object? how do you
+convert an incoming json object to a hash? etc.
+
+8) fluently manipulaing data structures in ruby may be a weakness...hash
+of hashes...how do u create that?  an array of arrays...how do you
+create that?  how do you convert a hash to a json object? how do you
+convert an incoming json object to a hash? etc.
+
+8) fluently manipulaing data structures in ruby may be a weakness...hash
+of hashes...how do u create that?  an array of arrays...how do you
+create that?  how do you convert a hash to a json object? how do you
+convert an incoming json object to a hash? etc.
+
+8) fluently manipulaing data structures in ruby may be a weakness...hash
+of hashes...how do u create that?  an array of arrays...how do you
+create that?  how do you convert a hash to a json object? how do you
+convert an incoming json object to a hash? etc.
+
+8) fluently manipulaing data structures in ruby may be a weakness...hash
+of hashes...how do u create that?  an array of arrays...how do you
+create that?  how do you convert a hash to a json object? how do you
+convert an incoming json object to a hash? etc.
+
+8) fluently manipulaing data structures in ruby may be a weakness...hash
+of hashes...how do u create that?  an array of arrays...how do you
+create that?  how do you convert a hash to a json object? how do you
+convert an incoming json object to a hash? etc.
+
+8) fluently manipulaing data structures in ruby may be a weakness...hash
+of hashes...how do u create that?  an array of arrays...how do you
+create that?  how do you convert a hash to a json object? how do you
+convert an incoming json object to a hash? etc.
+
+9) why render when there is a an error in a form, and why redirect when
+the form is successfully submitted?
+
+10) what is hashwithindifferentaccess?
+
+11) so in the specs, when you execute a REST action, you send a
+parameter, like :session => @user, :user => @attr
+what does :sessions, and :user represent?  the argument to
+Model.find(params[x])?
+
+12) I'm not sure how one could impersonate another user by forging a
+cookie - so you get the id from the cookie, then spook the cookie as you
+hit the app?  would love to actually view cookies
+
+13) if we didn't user new_record when creating the salt, the salt would
+be created everytime the user was changed - why would this prevent
+retrieval of the session's user?
+
+14) how can you create a palindrome? 
+
+15) remember what short circuit evaluation is
+
+16) study this construct => User.authenticate_with_salt(*remember_token)
+the * in front of remember_token allows you to insert a 2 element array
+into this method which gets split into 2 separate arguments which is
+what authenticate_with_salt is expecting
+
+17)  not clear on this construct ->
+cookies.signed[:remember_token] || [nil, nil]
+
+the answer is "The reason for this code is that the support for signed
+cookies inside Rails tests is still immature, and a nil value for the
+cookie causes spurious test breakage. Returning [nil, nil] instead fixes
+the issue"
+
+you'll have to investigate more

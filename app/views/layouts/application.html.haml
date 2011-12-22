@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title= title
+    = stylesheet_link_tag "application", :media => "screen"
+    
+    %script{:src => "http://code.jquery.com/jquery-1.7.min.js"}
+    /[if lt IE 9]
+      %script{:src=>"http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+    = csrf_meta_tags
+  %body
+    #main
+    
