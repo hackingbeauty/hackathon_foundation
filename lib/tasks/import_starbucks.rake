@@ -2,14 +2,6 @@ namespace :import do
   desc "import starbucks geolocation data"
   task :starbucks => :environment do
     begin
-      # location_type = [
-      #   "starbucks","peets","caribou coffee","tim horton's",
-      #   "tully's","seattle's best","coffee bean & tea leaf",
-      #   "coffee beanery","dunn bros. coffee","port city java"
-      # ].sort
-      # location_type.each do |name|
-      #   LocationType.create!(:name => name)
-      # end
       file = "#{Rails.root}/lib/tasks/starbucks.csv"
       File.readlines(file).each do |line|
         starbucks = line.split(",")        
