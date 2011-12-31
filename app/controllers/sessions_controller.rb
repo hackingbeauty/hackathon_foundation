@@ -23,7 +23,10 @@ class SessionsController < ApplicationController
       puts loc.state
     end
 
-    user = User.find_or_create_by_phone(params[:user])
+    user = User.find_or_create_by_email(params[:user])
+    puts "--------"
+    puts "params of user is #{params[:user]}"
+    puts "the user is #{user}"
     coordinate = Coordinate.find_or_create_by_latitude_and_longitude(latitude,longitude);
     user.visits.create!(:coordinate_id => coordinate.id)
     @users = User.all

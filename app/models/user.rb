@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
   has_many :visitations, :through => :visits, :source => :coordinate
   has_many :profiles  
  
-  attr_accessible :name, :phone, :info
+  attr_accessible :email, :facebook_id, :name, :info
 end
 

@@ -49,14 +49,15 @@ ActiveRecord::Schema.define(:version => 20111214070614) do
   end
 
   create_table "users", :force => true do |t|
+    t.string   "email"
     t.string   "name"
-    t.string   "phone"
+    t.string   "facebook_id"
+    t.string   "info"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "info"
   end
 
-  add_index "users", ["phone"], :name => "index_users_on_phone"
+  add_index "users", ["email", "facebook_id"], :name => "index_users_on_email_and_facebook_id"
 
   create_table "visits", :force => true do |t|
     t.integer  "user_id"
