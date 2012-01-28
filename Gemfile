@@ -14,6 +14,10 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+gem "mongoid", "~> 2.4"
+gem "bson_ext", "~> 1.5"
+gem "geocoder"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -9,6 +9,7 @@ class Geolocation
   def getPossibleLocations(lat,long,meters)
     possible_locations = []
     Location.all.each do |loc|
+      puts "a loc is #{loc}"
       user_lat = lat.to_i
       user_long = long.to_i
       loc_lat = loc.coordinate.latitude.to_i
