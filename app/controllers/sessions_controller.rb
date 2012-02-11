@@ -9,32 +9,30 @@ class SessionsController < ApplicationController
   def create
     puts "============================"
     puts "params[:user] #{params[:user]}"
-    latitude = params[:user][:coordinates]['0']['latitude']
-    longitude = params[:user][:coordinates]['1']['longitude']
-
-    # geolocation_obj = Geolocation.new
-    # puts "====== about to print ======"
-    # possible_locations = geolocation_obj.getPossibleLocations(latitude,longitude,10)
-    # puts possible_locations.count
-    
-    # possible_locations.each do |loc|
-    #   puts loc.address1
-    #   puts loc.city
-    #   puts loc.state
-    # end
+    latitude = params[:user][:coordinates]['latitude'].to_f
+    longitude = params[:user][:coordinates]['longitude'].to_f
 
     user = User.find_or_create_by_email(params[:user])
     puts "--------"
     puts "the user is #{user}"
     coordinate = Coordinate.find_or_create_by_latitude_and_longitude(latitude,longitude);
+    
+    puts "testing geocoder here"
+    puts "bearing to paris is #{coordinate.bearing_to("Paris, France")}"
+    
     user.visits.create!(:coordinate_id => coordinate.id)
+
     @users = User.all
+    puts "about to render #{@users}"
+
     if user
       sign_in user
     end
+    
     respond_to do |format|   
-      format.json { render :json => { :users => @users } }   
-    end
+      format.json { render :json => { :users => @users } }  
+    end    
+   
   end
 
   def destroy
