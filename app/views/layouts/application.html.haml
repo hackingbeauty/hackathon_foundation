@@ -1,13 +1,75 @@
-!!!
-%html
-  %head
-    %title= title
-    = stylesheet_link_tag "application", :media => "screen"
+/ !!!
+/ %html
+/   %head
+/     %title= title
+/     = stylesheet_link_tag "application", :media => "screen"
+/     
+/     %script{:src => "http://code.jquery.com/jquery-1.7.min.js"}
+/     /[if lt IE 9]
+/       %script{:src=>"http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+/     = csrf_meta_tags
+/   %body
+/     #main
     
-    %script{:src => "http://code.jquery.com/jquery-1.7.min.js"}
-    /[if lt IE 9]
-      %script{:src=>"http://html5shiv.googlecode.com/svn/trunk/html5.js"}
-    = csrf_meta_tags
+    
+!!!
+/[if IEMobile 7 ] <html class="no-js iem7 standalone">
+/ [if (gt IEMobile 7)|!(IEMobile)]><!
+%html.no-js
+  / <![endif]
+  %head
+    %title Cawfee Chat
+    %link{:href => "coffee-chat.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
+    %link{:href => "touch-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "startup-icon.png", :rel => "apple-touch-startup-image"}/
+    = stylesheet_link_tag "application", :media => "screen"
   %body
     #main
+      %nav#nav
+      #container
+    %footer
+      footer goes here
+    / Templates
+    %script#tab_bar_view
+      <ul id="tab-bar-list" class="tab-bar">
+      <li id="tab-home">
+      <a id="home" href="/">Home</a>
+      </li>
+      <li id="tab-announce">
+      <button id="announce">Announce</button>
+      </li>
+      <li id="tab-favorites">
+      <a id="favorites" href="#">Favorites</a>
+      </li>
+      </ul>
+    %script#user_list_view
+      <ul id="users" class="table-view table-action"></div>
+    %script#user_view
+      <div class="data">
+      <div class="photo">
+      <img src="https://graph.facebook.com/<%= facebook_id %>/picture" alt=""+ <%= name %> +""/>
+      </div>
+      <div class="name">
+      <h2>
+      <%= name %>
+      </h2>
+      </div>
+      <span class="status">
+      info goes here
+      </span>
+      <span class="relative-distance">233m away</span>
+      <span class="visits">73</span>
+      </div>
+    %script#user_profile_view
+      <img src="https://graph.facebook.com/<%= facebook_id %>/picture?type=large" alt=""+ <%= name %> +""/>
+      <div id="user_info">
+      <h1>
+      <%= name %>
+      </h1>
+      <div id="info">
+      info goes here
+      </div>
+      </div>
+= javascript_include_tag "application"
+
     

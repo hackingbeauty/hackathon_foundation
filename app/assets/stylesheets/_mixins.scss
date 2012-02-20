@@ -1,0 +1,15 @@
+@mixin rounded($radius) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin button {
+  background-color: #FF841F;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff5701), to(#ff841f));
+  background-image: -webkit-linear-gradient(top, #ff5701, #ff841f);
+  background-image: -moz-linear-gradient(top, #ff5701, #ff841f);
+  background-image: -ms-linear-gradient(top, #ff5701, #ff841f);
+  background-image: -o-linear-gradient(top, #ff5701, #ff841f);
+}
+

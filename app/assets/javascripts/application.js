@@ -1,21 +1,33 @@
 // This is a manifest file that'll be compiled into including all the files listed below.
 // Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
-// be included in the compiled file accessible from http://example.com/assets/application.js
+// be included in the compiled file accessible from http://example.com/assets/application
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require ./vendor/modernizr-2.0.6
 //= require ./vendor/jquery.1.7
+//= require ./vendor/modernizr-2.0.6.js
+//= require ./vendor/jquery.cookie
 //= require ./vendor/underscore
 //= require ./vendor/backbone
-//= require ./vendor/jquery-ui-1.8.13.custom.min
-//= require ./vendor/jquery.cookie
-//= require cc.init
-//= require cc.page.viewer
-//= require cc.location
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
+//= require setup
+//= require ./backbone/models/user
+//=require ./backbone/views/login_view
+//=require ./backbone/views/tab_bar_view
+//=require ./backbone/collections/users
+//=require ./backbone/views/user_view
+//=require ./backbone/views/user_list_view
+//=require ./backbone/views/user_profile_view
+//=require ./backbone/routers/user_router
+//=require ./modules/coffeechat.location
+//=require ./modules/coffeechat.communicator
+//=require ./modules/coffeechat.login
+//=require ./modules/coffeechat.init
+
+
+
+
+
+
+
 
 
