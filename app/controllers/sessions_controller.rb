@@ -29,9 +29,10 @@ class SessionsController < ApplicationController
       sign_in user
     end
     
-    respond_to do |format|   
-      format.json { render :json => { :users => @users } }  
-    end    
+    # respond_to do |format|   
+    #   format.json { render :json => { :users => @users } }  
+    # end    
+   render :json => @users
    
   end
 
