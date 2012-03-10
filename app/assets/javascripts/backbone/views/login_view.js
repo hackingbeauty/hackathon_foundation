@@ -24,7 +24,6 @@ CoffeeChat.Views.LoginView = Backbone.View.extend({
     _.bindAll(this, 'render');
   },
   loginUser: function(){
-    alert('loginview');
     CoffeeChat.Login.loginUser(this.formElem);
     return false;
   },

@@ -1,17 +1,3 @@
-/ !!!
-/ %html
-/   %head
-/     %title= title
-/     = stylesheet_link_tag "application", :media => "screen"
-/     
-/     %script{:src => "http://code.jquery.com/jquery-1.7.min.js"}
-/     /[if lt IE 9]
-/       %script{:src=>"http://html5shiv.googlecode.com/svn/trunk/html5.js"}
-/     = csrf_meta_tags
-/   %body
-/     #main
-    
-    
 !!!
 /[if IEMobile 7 ] <html class="no-js iem7 standalone">
 / [if (gt IEMobile 7)|!(IEMobile)]><!
@@ -23,6 +9,7 @@
     %link{:href => "touch-icon.png", :rel => "apple-touch-icon"}/
     %link{:href => "startup-icon.png", :rel => "apple-touch-startup-image"}/
     = stylesheet_link_tag "application", :media => "screen"
+    = csrf_meta_tags
   %body
     #main
       %nav#nav

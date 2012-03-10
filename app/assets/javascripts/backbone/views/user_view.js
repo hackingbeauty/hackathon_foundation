@@ -9,8 +9,6 @@ CoffeeChat.Views.UserView = Backbone.View.extend({
     _.bindAll(this, 'render');
   },
   render: function(){
-    console.log('inside user_view',this.model);
-    console.log('inside user_view with toJSON() call', this.model.toJSON());
     $(this.el).html(this.template(this.model.toJSON()));
     $(this.el).addClass(this.options.row)
     return this;

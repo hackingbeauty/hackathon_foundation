@@ -13,7 +13,6 @@ CoffeeChat.Views.UserListView = Backbone.View.extend({
     $users = $('#users');
     var count = 0,
         row = "";
-    console.log('inside user_list view, collection is',this.collection);
     this.collection.each(function(user){
       if(count%2 == 0){
         row = "even";
