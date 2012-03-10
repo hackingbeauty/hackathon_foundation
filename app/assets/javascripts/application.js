@@ -19,7 +19,6 @@
 //=require ./backbone/views/user_profile_view
 //=require ./backbone/routers/user_router
 //=require ./modules/coffeechat.location
-//=require ./modules/coffeechat.communicator
 //=require ./modules/coffeechat.login
 //=require ./modules/coffeechat.init
 

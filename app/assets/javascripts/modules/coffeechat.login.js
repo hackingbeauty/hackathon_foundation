@@ -1,5 +1,5 @@
 CoffeeChat.Login = {
-  loginUser: function(form){
+  loginUser: function(form,callingObj){
     var self = this;
     var userData = {
       email: $(form).find('#email').val(),
@@ -13,6 +13,7 @@ CoffeeChat.Login = {
         user: userData
       },
       success: function(response){
+        callingObj.remove(); //remove the login view which is calling this module        
         for (item in response){
           var user = new CoffeeChat.Models.User({
             name: response[item].name,
@@ -20,10 +21,9 @@ CoffeeChat.Login = {
           });
           CoffeeChat.UsersCollection.add(user);
         }
-        $(CoffeeChat.Views.LoginView.el).remove();
       },
       error: function(res){
-        console.log('error res is ',res);
+        $(callingObj.el).children(':first').html('Ooopsy!  There was a problem.  Try again.');
       }
     });
   }
