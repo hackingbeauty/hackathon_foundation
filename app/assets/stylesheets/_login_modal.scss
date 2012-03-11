@@ -1,0 +1,27 @@
+$login_modal_background:#1e1e28;
+
+
+#login_modal {
+  @include rounded(20px);
+  position:fixed;
+  top:50%;
+  left:50%;
+  margin-top:-180px;
+  margin-left:-345px;
+  height:360px;
+  width:690px;
+  z-index:1;
+  border:9px solid rgba(99, 99, 99, 0.5);
+  #login_modal_container {
+    background:$login_modal_background;
+    padding:20px;
+    @include rounded(10px);
+    height:89%;
+    #message {
+      color: $orange; 
+      font-size:40px;
+      text-align:center;
+      font-weight:bold;
+    }
+  }
+}

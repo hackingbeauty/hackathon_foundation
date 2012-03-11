@@ -1,3 +1,5 @@
+$orange: #e54b29;
+
 @mixin rounded($radius) {
 	-moz-border-radius: $radius;
 	-webkit-border-radius: $radius;
