@@ -15,6 +15,9 @@
     #main
       %nav#nav
       #container
+        - flash.each do |key, value|
+          .flash{:class => key}
+            = value
         = yield
     %footer
 = javascript_include_tag "application"
