@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @title = "Sign Up"
+    @title = @header_title = "Sign Up"
   end
 
   def show

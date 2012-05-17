@@ -42,5 +42,6 @@ module CoffeeChat
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.assets.paths << "#{Rails.root}/app/assets/webfonts"
   end
 end
