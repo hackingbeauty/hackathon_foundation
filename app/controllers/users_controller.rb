@@ -1,12 +1,7 @@
 class UsersController < ApplicationController  
-  before_filter :cors_preflight_check, :only => [:index]
-  after_filter :cors_set_access_control_headers, :only => [:index] 
 
   def index
-    puts "inside index action"
     @users = User.all
-    puts "@users length #{@users}"
-    render :json => @users
   end
 
   def new
@@ -20,8 +15,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    @user.save
+      @user = User.new(params[:user])
+      if @user.save
+        flash[:success] = "Welcome to the sample app!"
+        redirect_to @user
+      else
+        @title = "Sign Up"
+        render 'new'
+      end
   end
 
 end

@@ -4,7 +4,7 @@
 %html.no-js
   / <![endif]
   %head
-    %title Coffee Chat
+    %title= title
     %link{:href => "coffee-chat.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
     %link{:href => "touch-icon.png", :rel => "apple-touch-icon"}/
     %link{:href => "startup-icon.png", :rel => "apple-touch-startup-image"}/
@@ -15,6 +15,7 @@
     #main
       %nav#nav
       #container
+        = yield
     %footer
 = javascript_include_tag "application"
 

@@ -5,6 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :authentication_id
       t.string :info
+      t.string :encrypted_password
+      t.string :salt
       t.timestamps
     end
     add_index :users, [:email,:authentication_id]
