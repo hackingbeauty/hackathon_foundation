@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111214070614) do
+ActiveRecord::Schema.define(:version => 20120517022352) do
+
+  create_table "authentications", :force => true do |t|
+    t.string   "uid"
+    t.string   "provider"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authentications", ["uid"], :name => "index_authentications_on_uid"
 
   create_table "coordinates", :force => true do |t|
     t.float    "latitude"
@@ -51,13 +60,13 @@ ActiveRecord::Schema.define(:version => 20111214070614) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "name"
-    t.string   "facebook_id"
+    t.string   "authentication_id"
     t.string   "info"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email", "facebook_id"], :name => "index_users_on_email_and_facebook_id"
+  add_index "users", ["email", "authentication_id"], :name => "index_users_on_email_and_authentication_id"
 
   create_table "visits", :force => true do |t|
     t.integer  "user_id"

@@ -20,10 +20,6 @@ describe Authentication do
       @authentication = @user.authentications.create(@attr)
     end
     
-    it "should have a user attribute" do
-      @authentication.should respond_to(:user)
-    end
-    
   end
 
 end
