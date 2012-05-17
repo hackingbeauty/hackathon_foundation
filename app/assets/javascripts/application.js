@@ -20,7 +20,6 @@
 //=require ./backbone/routers/user_router
 //=require ./modules/coffeechat.location
 //=require ./modules/coffeechat.login
-//=require ./modules/coffeechat.init
 
 
 

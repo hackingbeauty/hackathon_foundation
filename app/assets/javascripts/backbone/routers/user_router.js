@@ -4,6 +4,7 @@ CoffeeChat.Routers.UserRouter = Backbone.Router.extend({
     'profile/:cid':'profile'
   },
   initialize: function() {
+    alert('inside initalize in user router');
     this.main_container = $('#main #container');
     this.nav = $('#main #nav');
     this.tab_bar_view = new CoffeeChat.Views.TabBarView();
@@ -15,6 +16,7 @@ CoffeeChat.Routers.UserRouter = Backbone.Router.extend({
     $(this.main_container).append(this.user_list_view.render().el);  
   },
   home: function(){
+    alert('inside home');
     $('#user_list').css('margin-left','0%');
   },
   profile: function(cid){  

@@ -14,7 +14,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
-gem "mongoid", "~> 2.4"
+# gem "mongoid", "~> 2.4"
 gem "bson_ext", "~> 1.5"
 gem "geocoder"
 

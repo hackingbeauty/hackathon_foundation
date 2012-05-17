@@ -82,12 +82,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
-    mongo (1.5.2)
-      bson (= 1.5.2)
-    mongoid (2.4.0)
-      activemodel (~> 3.1)
-      mongo (~> 1.3)
-      tzinfo (~> 0.3.22)
     multi_json (1.0.4)
     multipart-post (1.1.3)
     mysql2 (0.3.7)
@@ -198,7 +192,6 @@ DEPENDENCIES
   jasminerice
   jquery-rails
   json
-  mongoid (~> 2.4)
   mysql2
   omniauth
   omniauth-facebook

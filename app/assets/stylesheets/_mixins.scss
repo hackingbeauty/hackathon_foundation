@@ -1,9 +1,10 @@
-$orange: #e54b29;
+@import "colors";
 
 @mixin rounded($radius) {
 	-moz-border-radius: $radius;
 	-webkit-border-radius: $radius;
 	border-radius: $radius;
+	background: $orange;
 }
 
 @mixin button {
