@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       if @user.save
         redirect_to @user, :flash => {:success => "Welcome to the sample app!"}
       else
-        @title = "Sign Up"
+        @title = @header_title = "Sign Up"
         render 'new'
       end
   end
