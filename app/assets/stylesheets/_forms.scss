@@ -1,0 +1,53 @@
+/* Registration Form */
+
+form {
+    text-align: left;
+    font-size: 2.25em;
+    text-shadow: 0 1px 0 $text_shadow_grey;
+}
+
+form#new_user {
+    width:100%;
+    .field {
+       margin-bottom:1em;
+    }
+    label {
+        display: block;
+    }
+    input {
+        display:block;
+        margin-top: 0.3125em;
+        height:44px;
+        background-color: white;
+        border: 1px solid $form_input_border;
+        border-radius: 0.1388888888888889em;
+        color: $form_input_color;
+        font: 1em 'MuseoSlab', 'Clarendon', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        width:100%;
+    }
+    #error_explanation {
+        border-top:1px solid $form_error_border;
+        background:$form_error_body;
+        color:white;
+        margin: 0 auto;
+        font-size: 0.6em;
+        -webkit-transition: opacity 1s ease-out;
+        text-align:center;
+        padding:1.3em 0;
+        margin-bottom:2em;
+        text-transform:capitalize;
+        font-weight:normal;
+        span {
+            margin-left:0.5em;
+        }
+        &:before{
+            font-family: 'MuseoSlabItalic', 'Clarendon', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-style: italic;
+            content: 'Whoops!  ';   
+        }
+    }
+    .form_container {
+        width:50%;
+        margin:0 auto;
+    }
+}

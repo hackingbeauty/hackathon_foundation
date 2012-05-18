@@ -2,13 +2,15 @@
 @import "mixins";
 @import "colors";
 @import "typography";
+@import "forms";
 
 body {
-    font-size:16px;
     background: #BBB;
     line-height: 1.3; 
     color: $text_grey;
     text-align:center;
+    color: #717171;
+    font: 16px 'MuseoSlab', 'Clarendon', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 header {
