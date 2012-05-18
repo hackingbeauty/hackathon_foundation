@@ -34,7 +34,6 @@ form#new_user {
         -webkit-transition: opacity 1s ease-out;
         text-align:center;
         padding:1.3em 0;
-        margin-bottom:2em;
         text-transform:capitalize;
         font-weight:normal;
         span {
@@ -49,5 +48,6 @@ form#new_user {
     .form_container {
         width:50%;
         margin:0 auto;
+        margin-top:1em;
     }
 }
