@@ -5,7 +5,7 @@ CoffeeChat::Application.routes.draw do
 
   get "authentications/destroy"
 
-  get "sessions/new"
+  resources :sessions, :only => [:new, :create, :destroy]
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
@@ -17,6 +17,8 @@ CoffeeChat::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   match '/auth/:provider/callback', :to => 'authentications#create'
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
   
   root :to => 'pages#home'
 end
