@@ -48,7 +48,7 @@ end
 
 group :test do
   gem 'webrat', '0.7.1'
-  gem 'spork'
+  gem 'spork', '0.9.0.rc8'
   gem 'guard-spork'
   gem 'factory_girl_rails', '1.0'
   gem 'factory_girl'

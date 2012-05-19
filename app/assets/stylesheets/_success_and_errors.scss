@@ -1,0 +1,21 @@
+.error.flash,
+#error_explanation {
+    font-size: 1.35em;
+    border-top:1px solid $form_error_border;
+    background:$form_error_body;
+    color:white;
+    margin: 0 auto;
+    -webkit-transition: opacity 1s ease-out;
+    text-align:center;
+    padding:1.3em 0;
+    text-transform:capitalize;
+    font-weight:normal;
+    span {
+        margin-left:0.5em;
+    }
+    &:before{
+        font-family: 'MuseoSlabItalic', 'Clarendon', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-style: italic;
+        content: 'Whoops!  ';   
+    }
+}

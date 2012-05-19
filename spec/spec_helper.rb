@@ -22,7 +22,7 @@ Spork.prefork do
 
     config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-    config.filter_run :focus => true
+    # config.filter_run :focus => true
     # If you're not using ActiveRecord, or you'd prefer not to run each of your
     # examples within a transaction, comment the following line or assign false
     # instead of true.
