@@ -15,4 +15,12 @@ describe SessionsController do
         end
     end
   
+    describe "POST 'create'" do
+        it "should be successful" do
+        
+        end
+       
+        
+    end
+  
 end
