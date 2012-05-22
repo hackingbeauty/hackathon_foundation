@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
+  
   # If this is a preflight OPTIONS request, then short-circuit the
   # request, return only the necessary headers and return an empty
   # text/plain.
