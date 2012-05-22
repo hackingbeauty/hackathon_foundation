@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
         else
             sign_in user
             redirect_to user
-            # handle success
         end
     end
 
