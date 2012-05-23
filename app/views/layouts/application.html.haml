@@ -13,6 +13,17 @@
   %body
     %header
       / #logo
+      %ul
+        - if signed_in?
+          %li
+            = link_to "Sign Out", signout_path
+          %li
+            = link_to "Profile", current_user
+        - else    
+          %li    
+            = link_to "Sign In", signin_path
+          %li
+            = link_to "Sign Up", signup_path
       %h2= @header_title
     #main
       %nav#nav

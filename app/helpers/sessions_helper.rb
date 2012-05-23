@@ -21,6 +21,11 @@ module SessionsHelper
        !current_user.nil? 
     end
     
+    def sign_out
+        cookies.delete(:remember_token) # not worth the trouble testing cookies in spec, changes too frequently when upgrading
+        current_user = nil
+    end
+    
     private
     
         def user_from_remember_token
