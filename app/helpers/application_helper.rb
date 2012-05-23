@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def title
-    base_title = "Coffee Chat"
+    base_title = "Title Goes Here"
     if @title.nil?
       base_title
     else
